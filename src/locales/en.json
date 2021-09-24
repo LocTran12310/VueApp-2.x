@@ -1,0 +1,246 @@
+{
+  "message": "hello i18n !!",
+  "goBack": "GO BACK",
+  "modalDelete": {
+    "message": "Do you really want to delete?",
+    "btnCancel": "CANCEL",
+    "btnDelete": "DELETE"
+  },
+  "snackbar": {
+    "close": "CLOSE",
+    "loginSuccess": "Logged in successfully",
+    "loginFail": "Error! Login failed!",
+    "logoutSuccess": "You have been successfully logout",
+    "logoutFail": "Error! Logout failed!",
+    "addSuccess": "Successfully added",
+    "addFail": "Error! Add failed",
+    "editSuccess": "Successfully updated",
+    "editFail": "Error! Update failed",
+    "deleteSuccess": "Successfully deteled",
+    "deleteFail": "Error! Delete failed",
+    "changePasswordSuccess": "Password change successful",
+    "changePasswordFail": "Error! Failed to change password!"
+  },
+  "nav": {
+    "menu": {
+      "profile": "My Profile",
+      "changePassword": "Change Password"
+    },
+    "language": {
+      "en": "English (US)",
+      "vi": "Tiếng Việt"
+    }
+  },
+  "navDrawer": {
+    "home": "Home",
+    "profiles": "Profiles",
+    "courses": "Courses",
+    "coursesList": "Courses List",
+    "coursesRegister": "Register Course",
+    "master": "Master",
+    "masterPositions": "Positions",
+    "masterDepartments": "Departments",
+    "logout": "Logout"
+  },
+  "changePassword": {
+    "title": "CHANGE PASSWORD",
+    "password": "Password",
+    "passwordConfirm": "Password Confirm",
+    "rules": {
+      "password":"Password is required",
+      "passwordConfirm":"Password don't match"
+    },
+    "btnSubmit": "SUBMIT"
+  },
+  "profileList": {
+    "searchPanel": {
+      "title": "Search",
+      "btnSearch": "SEARCH",
+      "employee": "Employee",
+      "department": "Department",
+      "position": "Position"
+    },
+    "datatable": {
+      "title": "Search result",
+      "btnReset": "RESET",
+      "header": {
+        "id": "NO",
+        "employeeID": "Employee ID",
+        "employeeName": "Employee Name",
+        "image": "Picture",
+        "gender": "Gender",
+        "birthday": "Birthday",
+        "department": "Department",
+        "position": "Position",
+        "probationDate": "Probation Date",
+        "mailAddress": "Mail Address",
+        "actions": "Actions"
+      }
+    },
+    "modalActions": {
+      "titleSee": "PROFILE INFOMATION",
+      "titleAdd": "ADD NEW PROFILE",
+      "titleEdit": "EDIT PROFILE",
+      "btnAdd": "ADD NEW",
+      "employeeID": "Employee ID",
+      "password": "Password",
+      "passwordConfirm": "Password Confirm",
+      "employeeName": "Employee Name",
+      "image": "Picture",
+      "gender": {
+        "male": "Male",
+        "female": "Female"
+      },
+      "birthday": "Birthday",
+      "department": "Department",
+      "position": "Position",
+      "address": "Address",
+      "telephone": "Telephone",
+      "mobile": "Mobile",
+      "officalDate": "Offical Date",
+      "probationDate": "Probation Date",
+      "mailAddress": "Mail Address",
+      "status": {
+        "on": "Available",
+        "off": "Unavailable"
+      },
+      "btnSave": "SAVE",
+      "btnCancel": "CANCEL",
+      "rules": {
+        "employeeID": "Employee ID is required",
+        "employeeIDLength": "Employee ID less than 6 characters",
+        "employeeIdIsExisted": "Employee ID was existed",
+        "password": "Password is required",
+        "passwordConfirm": "Password don't match",
+        "employeeName": "Employee Name is required",
+        "department": "Department is required",
+        "position": "Position is required",
+        "mailAddress": "Mail Address is required",
+        "mailAddressValid": "Mail Address must be valid",
+        "image": "Avatar size should be less than 5MB!"
+      }
+    }
+  },
+  "userDetail": {
+    "title": "My Profile",
+    "employeeID": "Employee ID",
+    "department": "Department",
+    "position": "Position",
+    "gender": "Gender",
+    "birthday": "Date of birth",
+    "officalDate": "Offical Date",
+    "probationDate": "Probation Date"
+  },
+  "course": {
+    "titleRegister": "REGISTER COURSE",
+    "titleEdit": "EDIT COURSE",
+    "titleDetail": "COURSE DETAIL",
+    "name": "Name",
+    "courseType": "Course type",
+    "time": "Time",
+    "weekdays": "Weekdays",
+    "startDate": "Start date",
+    "endDate": "End date",
+    "note": "Note",
+    "updatedTime": "Updated time",
+    "updatedUser": "Updated user",
+    "createdTime": "Created time",
+    "createdUser": "Created user",
+    "btnRegister": "REGISTER",
+    "btnCancel": "CANCEL",
+    "btnSave": "SAVE",
+    "btnDelete": "DELETE",
+    "btnDetail": "Participants",
+    "rules": {
+      "name": "Name is required",
+      "courseType": "Course type is required",
+      "time": "Time is required",
+      "startDate": "Start date is required"
+    },
+    "courseTypes": {
+      "all": "All",
+      "course": "Course",
+      "event": "Event"
+    }
+  },
+  "courseParticipants": {
+    "title": "Participants",
+    "id":"NO",
+    "employeeName": "Name",
+    "employeeId": "Employee ID",
+    "courseType": "Course/Event name",
+    "endDate": "End date",
+    "weekdays": "Weekdays",
+    "time": "Time",
+    "actions": "Actions",
+    "btnAdd": "ADD NEW",
+    "modalAdd": {
+      "title": "ADD EMPLOYEE",
+      "employeeId":"Employee ID",
+      "employeeName": "Employee Name",
+      "rules": {
+        "employeeID":"Employee ID is required",
+        "employeeName":"Employee Name is required"
+      },
+      "btnCancel": "CANCEL",
+      "btnAdd": "ADD"
+    }
+  },
+  "courseList": {
+    "courseType": {
+      "all": "All",
+      "course": "Course",
+      "event": "Event"
+    },
+    "searchPanel": {
+      "title": "Search",
+      "btnSearch": "SEARCH",
+      "name": "Name",
+      "courseType": "Course type",
+      "weekdays": "Weekdays",
+      "time": "Time",
+      "startFrom": "Start from",
+      "startTo": "Start to",
+      "endFrom": "End from",
+      "endTo": "End to"
+    },
+    "datatable": {
+      "title": "Search result",
+      "btnReset": "RESET",
+      "btnAdd": "ADD NEW",
+      "header": {
+        "id": "NO",
+        "name": "Name",
+        "courseType": "Course type",
+        "weekdays": "Weekdays",
+        "time": "Time",
+        "note": "Note",
+        "startDate": "Start date",
+        "endDate": "End date",
+        "actions": "Actions"
+      }
+    }
+  },
+  "positionList": {
+    "titleSearchPanel": "Search",
+    "titleDataTable": "Search result",
+    "titleModalAdd": "ADD NEW POSITION",
+    "titleModalEdit": "EDIT POSITION",
+    "id": "NO",
+    "name": "Name",
+    "shortName": "Short Name",
+    "note": "Note",
+    "actions": "Actions",
+    "rules": {
+      "name": "Name is required",
+      "nameIsExisted": "Name is existed",
+      "shortName": "Short name is required",
+      "shortNameIsExisted": "Short name is existed"
+    },
+    "btnAdd": "ADD NEW",
+    "btnSearch": "SEARCH",
+    "btnCancel": "CANCEL",
+    "btnSave": "SAVE",
+    "btnReset": "RESET"
+  }
+}

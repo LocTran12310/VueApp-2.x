@@ -1,0 +1,246 @@
+{
+  "message": "hello i18n !!",
+  "goBack": "TRỞ VỀ",
+  "modalDelete": {
+    "message": "Bạn có thực sự muốn xóa?",
+    "btnCancel": "HỦY",
+    "btnDelete": "XÓA"
+  },
+  "snackbar": {
+    "close": "ĐÓNG",
+    "loginSuccess": "Đăng nhập thành công",
+    "loginFail": "Lỗi! Đăng nhập thất bại!",
+    "logoutSuccess": "Đăng xuất thành công",
+    "logoutFail": "Lỗi! Đăng xuất thất bại!",
+    "addSuccess": "Thêm thành công",
+    "addFail": "Lỗi! Thêm thất bại!",
+    "editSuccess": "Sửa thành công",
+    "editFail": "Lỗi! Sửa thất bại!",
+    "deleteSuccess": "Xóa thành công",
+    "deleteFail": "Lỗi! Xóa thất bại!",
+    "changePasswordSuccess": "Đổi mật khẩu thành công",
+    "changePasswordFail": "Lỗi! Đổi mật khẩu thất bại!"
+  },
+  "nav": {
+    "language": {
+      "en": "English (US)",
+      "vi": "Việt Nam"
+    },
+    "menu": {
+      "profile": "Thông tin của tôi",
+      "changePassword": "Đổi mật khẩu"
+    }
+  },
+  "navDrawer": {
+    "home": "Trang chủ",
+    "profiles": "Nhân sự",
+    "courses": "Khóa học",
+    "coursesList": "Danh sách khóa học",
+    "coursesRegister": "Đăng ký khóa học",
+    "master": "Master",
+    "masterPositions": "Chức vụ",
+    "masterDepartments": "Bộ phận",
+    "logout": "Đăng xuất"
+  },
+  "changePassword": {
+    "title": "ĐỔI MẬT KHẨU",
+    "password": "Mật khẩu",
+    "passwordConfirm": "Xác nhận mật khẩu",
+    "rules": {
+      "password":"Mật khẩu là bắt buộc",
+      "passwordConfirm":"Mật khẩu không khớp"
+    },
+    "btnSubmit": "XÁC NHẬN"
+  },
+  "profileList": {
+    "searchPanel": {
+      "title": "Tìm kiếm",
+      "btnSearch": "TÌM KIẾM",
+      "employee": "Nhân viên",
+      "department": "Bộ phận",
+      "position": "Vị trí"
+    },
+    "datatable": {
+      "title": "Kết quả tìm kiếm",
+      "btnReset": "TẢI LẠI",
+      "header": {
+        "id": "STT",
+        "employeeID": "Mã nhân viên",
+        "employeeName": "Tên nhân viên",
+        "image": "Hình ảnh",
+        "gender": "Giới tính",
+        "birthday": "Ngày sinh",
+        "department": "Bộ phận",
+        "position": "Chức vụ",
+        "probationDate": "Ngày vào công ty",
+        "mailAddress": "Địa chỉ email",
+        "actions": "Sửa/Xóa"
+      }
+    },
+    "modalActions": {
+      "titleSee": "PROFILE INFOMATION",
+      "titleAdd": "THÊM NHÂN SỰ MỚI",
+      "titleEdit": "SỬA THÔNG TIN NHÂN SỰ",
+      "btnAdd": "THÊM MỚI",
+      "employeeID": "Mã nhân viên",
+      "password": "Mật khẩu",
+      "passwordConfirm": "Nhập lại mật khẩu",
+      "employeeName": "Tên nhân viên",
+      "image": "Hình ảnh",
+      "gender": {
+        "male": "Nam",
+        "female": "Nữ"
+      },
+      "birthday": "Ngày sinh",
+      "department": "Bộ phận",
+      "position": "Vị trí",
+      "address": "Địa chỉ",
+      "telephone": "Số điện thoại",
+      "mobile": "Di động",
+      "officalDate": "Ngày chính thức",
+      "probationDate": "Ngày thử việc",
+      "mailAddress": "Địa chỉ mail",
+      "status": {
+        "on": "Available",
+        "off": "Unavailable"
+      },
+      "btnSave": "LƯU",
+      "btnCancel": "HỦY",
+      "rules": {
+        "employeeID": "Mã nhân viên là bắt buộc",
+        "employeeIDLength": "Mã nhân viên ít hơn 6 kí tự",
+        "employeeIdIsExisted": "Mã nhân viên đã tồn tại",
+        "password": "Mật khẩu là bắt buộc",
+        "passwordConfirm": "Mật khẩu không khớp",
+        "employeeName": "Tên nhân viên là bắt buộc",
+        "department": "Bộ phận là bắt buộc",
+        "position": "Vị trí là bắt buộc",
+        "mailAddress": "Địa chỉ mail là bắt buộc",
+        "mailAddressValid": "Địa chỉ mail không hợp lệ",
+        "image": "Kích thước nhỏ hơn 5MB!"
+      }
+    }
+  },
+  "userDetail": {
+    "title": "Thông tin của tôi",
+    "employeeID": "Mã nhân viên",
+    "department": "Bộ phận",
+    "position": "Vị trí",
+    "gender": "Giới tính",
+    "birthday": "Ngày sinh",
+    "officalDate": "Ngày chính thức",
+    "probationDate": "Ngày thử việc"
+  },
+  "course": {
+    "titleRegister": "ĐĂNG KÝ KHÓA HỌC",
+    "titleEdit": "CHỈNH SỬA KHÓA HỌC",
+    "titleDetail": "CHI TIẾT KHÓA HỌC",
+    "name": "Tên",
+    "courseType": "Loại",
+    "time": "Thời gian",
+    "weekdays": "Ngày trong tuần",
+    "startDate": "Ngày bắt đầu",
+    "endDate": "Ngày kết thúc",
+    "note": "Ghi chú",
+    "updatedTime": "Thời gian cập nhật",
+    "updatedUser": "Người cập nhật",
+    "createdTime": "Thời gian tạo",
+    "createdUser": "Người tạo",
+    "btnRegister": "ĐĂNG KÝ",
+    "btnSave": "LƯU",
+    "btnCancel": "HỦY",
+    "btnDelete": "XÓA",
+    "btnDetail": "Chi tiết",
+    "rules": {
+      "name": "Tên là bắt buộc",
+      "courseType": "Loại là bắt buộc",
+      "time": "Thời gian là bắt buộc",
+      "startDate": "Ngày bắt đầu là bắt buộc"
+    },
+    "courseTypes": {
+      "all": "Tất cả",
+      "course": "Khóa học",
+      "event": "Sự kiện"
+    }
+  },
+  "courseParticipants": {
+    "title": "Những người tham gia",
+    "id":"STT",
+    "employeeName": "Họ Tên",
+    "employeeId": "Mã nhân viên",
+    "courseType": "Tên khóa học/sự kiện",
+    "endDate": "Ngày kết thúc",
+    "weekdays": "Ngày trong tuần",
+    "time": "Thời gian",
+    "actions": "Actions",
+    "btnAdd": "THÊM MỚI",
+    "modalAdd": {
+      "title": "THÊM NHÂN VIÊN",
+      "employeeId":"Mã nhân viên",
+      "employeeName": "Tên nhân viên",
+      "rules": {
+        "employeeID":"Mã nhân viên là bắt buộc",
+        "employeeName":"Tên nhân viên là bắt buộc"
+      },
+      "btnCancel": "HỦY",
+      "btnAdd": "THÊM"
+    }
+  },
+  "courseList": {
+    "courseType": {
+      "all": "Tất cả",
+      "course": "Khóa học",
+      "event": "Sự kiện"
+    },
+    "searchPanel": {
+      "title": "Tìm kiếm",
+      "btnSearch": "TÌM KIẾM",
+      "name": "Tên ",
+      "courseType": "Loại",
+      "weekdays": "Ngày trong tuần",
+      "time": "Thời gian",
+      "startFrom": "Bắt đầu từ",
+      "startTo": "đến",
+      "endFrom": "Kết thúc từ",
+      "endTo": "đến"
+    },
+    "datatable": {
+      "title": "Kết quả tìm kiếm",
+      "btnReset": "TẢI LẠI",
+      "btnAdd": "THÊM MỚI",
+      "header": {
+        "id": "STT",
+        "name": "Tên",
+        "courseType": "Loại",
+        "weekdays": "Ngày trong tuần",
+        "time": "Thời gian",
+        "note": "Ghi chú",
+        "startDate": "Ngày bắt đầu",
+        "endDate": "Ngày kết thúc",
+        "actions": "Actions"
+      }
+    }
+  },
+  "positionList": {
+    "titleSearchPanel": "Tìm kiếm",
+    "titleDataTable": "Kết quả tìm kiếm",
+    "titleModalAdd": "THÊM CHỨC VỤ MỚI",
+    "titleModalEdit": "SỬA VỊ TRÍ",
+    "id": "STT",
+    "name": "Tên",
+    "shortName": "Tên viết tắt",
+    "note": "Ghi chú",
+    "actions": "Actions",
+    "rules": {
+      "name": "Tên là bắt buộc",
+      "nameIsExisted": "Tên đã tồn tại",
+      "shortName": "Tên viết tắt là bắt buộc",
+      "shortNameIsExisted": "Tên viết tắt đã tồn tại"
+    },
+    "btnAdd": "THÊM MỚI",
+    "btnSearch": "TÌM KIẾM",
+    "btnCancel": "HỦY",
+    "btnSave": "LƯU",
+    "btnReset": "TẢI LẠI"
+  }
+}
