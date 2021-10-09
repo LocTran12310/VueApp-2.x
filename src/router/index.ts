@@ -28,7 +28,11 @@ const routes: Array<RouteConfig> = [
         path: "/",
         name: "login",
         component: Login,
-        meta: { title: "Login | The Internship App", hideNavigation: true },
+        meta: {
+          title: "Login | The Internship App",
+          hideNavigation: true,
+          hideForAuth: true,
+        },
       },
       {
         path: "dashboard",
@@ -127,6 +131,30 @@ const routes: Array<RouteConfig> = [
         },
       },
       {
+        path: "attendance/workday",
+        name: "Workday",
+        component: () =>
+          import(
+            /* webpackChunkName: "AttendanceWorkday" */ "../views/attendance/workday/Workday.vue"
+          ),
+        meta: {
+          title: "Workday Detail | The Internship App",
+          requiresAuth: true,
+        },
+      },
+      {
+        path: "attendance/leave",
+        name: "Leave",
+        component: () =>
+          import(
+            /* webpackChunkName: "Leave" */ "../views/attendance/leave/Leave.vue"
+          ),
+        meta: {
+          title: "Workday Detail | The Internship App",
+          requiresAuth: true,
+        },
+      },
+      {
         path: "departments",
         name: "departments",
         component: () =>
@@ -143,6 +171,27 @@ const routes: Array<RouteConfig> = [
             /* webpackChunkName: "Positions" */ "../views/master/position/PositionList.vue"
           ),
         meta: { title: "Positions | The Internship App", requiresAuth: true },
+      },
+      {
+        path: "leave-types",
+        name: "LeaveTypes",
+        component: () =>
+          import(
+            /* webpackChunkName: "LeaveTypes" */ "../views/master/leave_type/LeaveTypeList.vue"
+          ),
+        meta: { title: "Leave Types | The Internship App", requiresAuth: true },
+      },
+      {
+        path: "leave-reasons",
+        name: "LeaveReasons",
+        component: () =>
+          import(
+            /* webpackChunkName: "LeaveReasons" */ "../views/master/leave_reason/LeaveReasonList.vue"
+          ),
+        meta: {
+          title: "Leave Reasons | The Internship App",
+          requiresAuth: true,
+        },
       },
     ],
   },
@@ -184,11 +233,20 @@ router.beforeEach((to, from, next) => {
   //set the current language for i18n
   i18n.locale = language;
   if (to.matched.some((record) => record.meta.requiresAuth)) {
-    if (store.state.user.isLoggedIn === false) {
+    if (!store.state.user.isLoggedIn) {
       next({
         name: "login",
         query: { redirect: to.fullPath },
       });
+    } else {
+      next();
+    }
+  } else {
+    next();
+  }
+  if (to.matched.some((record) => record.meta.hideForAuth)) {
+    if (store.state.user.isLoggedIn) {
+      next({ name: "dashboard" });
     } else {
       next();
     }

@@ -4,7 +4,7 @@
       <v-flex>
         <v-data-table
           :headers="headers"
-          :items="positions"
+          :items="leaveReasons"
           :page.sync="page"
           :items-per-page="itemsPerPage"
           :loading="isLoading"
@@ -38,16 +38,16 @@
                     parseInt($event, 10) < 30 ? parseInt($event, 10) : 30 || 5
                 "
               ></v-text-field>
-              <PositionModal
-                :isModalLoadingSync.sync="isModalLoading"
-                :isModalShowSync.sync="isModalShow"
-                :positionsSync.sync="positions"
+              <LeaveReasonModal
+                :leaveReasonsSync.sync="leaveReasons"
                 :editedItemSync.sync="editedItem"
-                :editedIndex.sync="editedIndex"
+                :editedIndex="editedIndex"
+                :isModalShowSync.sync="isModalShow"
+                :isModalLoadingSync.sync="isModalLoading"
                 :modalTitle="modalTitle"
                 :close="closeModal"
                 :save="saveModal"
-                ref="positionModal"
+                ref="leaveReasonModal"
               />
             </v-toolbar>
           </template>
@@ -80,7 +80,7 @@
       :isLoadingSync.sync="isModalDeleteLoading"
       :isModalDeleteShow.sync="isModalDeleteShow"
       :cancel="closeModalDelete"
-      :deleteConfirm="deletePositionConfirm"
+      :deleteConfirm="deleteConfirm"
     />
   </v-card>
 </template>
@@ -89,23 +89,22 @@
 import store from "@/store";
 import Vue from "vue";
 import { Component, PropSync, Watch, Ref } from "vue-property-decorator";
-import PositionModal from "./PositionModal.vue";
 import ModalDelete from "@/components/ModalDelete.vue";
+import LeaveReasonModal from "./LeaveReasonModal.vue";
 
 @Component({
   components: {
-    PositionModal,
     ModalDelete,
+    LeaveReasonModal,
   },
 })
 export default class ProfileDataTable extends Vue {
-  @PropSync("positionsSync", { type: Array }) positions!: any;
+  @PropSync("leaveReasonsSync", { type: Array, required: true })
+  leaveReasons!: any;
   @PropSync("searchByNameSync", { type: String }) searchByName!: any;
-  @PropSync("searchByShortNameSync", { type: String }) searchByShortName!: any;
   @PropSync("isLoadingSync", { type: Boolean }) isLoading!: boolean;
-  // @Ref() positionModal!: PositionModal;
   $refs!: {
-    positionModal: PositionModal;
+    leaveReasonModal: HTMLFormElement;
   };
   search = "";
   itemsPerPage = 10;
@@ -122,41 +121,38 @@ export default class ProfileDataTable extends Vue {
   editedItem = {
     id: 0,
     name: "",
-    short_name: "",
-    note: "",
     del_flag: 0,
     updated_user: store.state.user.user.user.login_id,
   };
   defaultItem = {
     id: 0,
     name: "",
-    short_name: "",
-    note: "",
     del_flag: 0,
     updated_user: store.state.user.user.user.login_id,
   };
 
   editItem(item: never) {
-    this.editedIndex = this.positions.indexOf(item);
+    this.editedIndex = this.leaveReasons.indexOf(item);
     this.editedItem = Object.assign({}, item);
     this.isModalShow = true;
   }
 
   deleteItem(item: never) {
-    this.editedIndex = this.positions.indexOf(item);
+    this.editedIndex = this.leaveReasons.indexOf(item);
     this.isModalDeleteShow = true;
   }
 
   closeModalDelete() {
     this.isModalDeleteShow = false;
+    this.editedIndex = -1;
   }
 
-  async deletePositionConfirm() {
+  async deleteConfirm() {
     this.isModalDeleteLoading = true;
     try {
-      const id = this.positions[this.editedIndex]["id"];
-      await store.dispatch("positions/deletePosition", id);
-      this.positions.splice(this.editedIndex, 1);
+      const id = this.leaveReasons[this.editedIndex]["id"];
+      await store.dispatch("leaveReasons/deleteLeaveReason", id);
+      this.leaveReasons.splice(this.editedIndex, 1);
       const alert = {
         isShow: true,
         message: this.$t("snackbar.deleteSuccess"),
@@ -180,14 +176,18 @@ export default class ProfileDataTable extends Vue {
 
   async saveModal() {
     this.isModalLoading = true;
-    if (this.$refs.positionModal.$refs.positionModalForm.validate()) {
+    if (this.$refs.leaveReasonModal.$refs.leaveReasonModalForm.validate()) {
       if (this.editedIndex > -1) {
         // SUA
         try {
-          await store.dispatch("positions/updatePosition", this.editedItem);
+          await store.dispatch(
+            "leaveReasons/updateLeaveReason",
+            this.editedItem
+          );
+          Object.assign(this.leaveReasons[this.editedIndex], this.editedItem);
           const alert = {
             isShow: true,
-            message: this.$t("snackbar.addSuccess"),
+            message: this.$t("snackbar.editSuccess"),
             icon: "mdi-check-circle",
             color: "success",
           };
@@ -196,7 +196,7 @@ export default class ProfileDataTable extends Vue {
         } catch (error) {
           const alert = {
             isShow: true,
-            message: this.$t("snackbar.addFail"),
+            message: this.$t("snackbar.editFail"),
             icon: "mdi-error-circle",
             color: "error",
           };
@@ -205,8 +205,11 @@ export default class ProfileDataTable extends Vue {
       } else {
         //THEM
         try {
-          const position = JSON.stringify(this.editedItem);
-          await store.dispatch("positions/createPosition", position);
+          const leaveReasonJson = JSON.stringify(this.editedItem);
+          await store.dispatch(
+            "leaveReasons/createLeaveReason",
+            leaveReasonJson
+          );
           const alert = {
             isShow: true,
             message: this.$t("snackbar.addSuccess"),
@@ -230,7 +233,7 @@ export default class ProfileDataTable extends Vue {
   }
 
   closeModal() {
-    this.$refs.positionModal.$refs.positionModalForm.resetValidation();
+    this.$refs.leaveReasonModal.$refs.leaveReasonModalForm.resetValidation();
     this.isModalShow = false;
     this.$nextTick(() => {
       this.editedItem = Object.assign({}, this.defaultItem);
@@ -244,6 +247,7 @@ export default class ProfileDataTable extends Vue {
         align: "center",
         sortable: false,
         value: "id",
+        width: "50px",
         filterable: false,
         divider: true,
         class: "deep-purple lighten-4 fixed",
@@ -261,28 +265,10 @@ export default class ProfileDataTable extends Vue {
         class: "deep-purple lighten-4 fixed",
       },
       {
-        text: this.$t("positionList.shortName"),
-        filter: (f: any) => {
-          return (f + "")
-            .toLowerCase()
-            .includes(this["searchByShortName"].toLowerCase());
-        },
-        align: "start",
-        value: "short_name",
-        divider: true,
-        class: "deep-purple lighten-4 fixed",
-      },
-      {
-        text: this.$t("positionList.note"),
-        align: "start",
-        value: "note",
-        divider: true,
-        class: "deep-purple lighten-4 fixed",
-      },
-      {
         text: this.$t("positionList.actions"),
         align: "center",
         value: "actions",
+        width: "100px",
         divider: true,
         class: "deep-purple lighten-4 fixed",
       },
@@ -292,6 +278,10 @@ export default class ProfileDataTable extends Vue {
   @Watch("isModalShow")
   onModalChange(val: any) {
     val || this.closeModal();
+  }
+  @Watch("isModalDeleteShow")
+  onModalClose(val: any) {
+    val || this.closeModalDelete();
   }
 
   get modalTitle() {

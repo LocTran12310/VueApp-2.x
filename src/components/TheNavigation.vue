@@ -176,6 +176,20 @@ export default class TheNavigation extends Vue {
       linkTo: "course",
     },
     {
+      title: "navDrawer.attendance",
+      icon: "mdi-calendar-multiple-check",
+      subItems: [
+        {
+          title: "navDrawer.attendanceWorkday",
+          linkTo: "attendance/workday",
+        },
+        {
+          title: "navDrawer.attendanceRegister",
+          linkTo: "attendance/leave",
+        },
+      ],
+    },
+    {
       title: "navDrawer.master",
       icon: "mdi-hexagon-multiple",
       subItems: [
@@ -186,6 +200,14 @@ export default class TheNavigation extends Vue {
         {
           title: "navDrawer.masterDepartments",
           linkTo: "departments",
+        },
+        {
+          title: "navDrawer.masterLeaveTypes",
+          linkTo: "leave-types",
+        },
+        {
+          title: "navDrawer.masterLeaveReasons",
+          linkTo: "leave-reasons",
         },
       ],
     },

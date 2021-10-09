@@ -68,7 +68,12 @@ export default class User extends Vue {
   baseURL = BASE_URL + "/auth/user/";
   user = store.state.user.user.user;
   profile = store.state.user.user.profile;
-
+  created() {
+    console.log("CREATED USER:", store.state.user?.user?.user);
+  }
+  mounted() {
+    console.log("MOUNTED USER:", store.state.user?.user?.user);
+  }
   loading = false;
 
   listInfos = [

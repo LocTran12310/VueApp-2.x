@@ -13,8 +13,10 @@
         v-model="date"
         :disabled="disabled"
         :outlined="outlined"
+        :hide-details="hideDetails"
         :dense="dense"
         :label="label"
+        :single-line="singleLine"
         append-icon="mdi-calendar"
         readonly
         v-bind="attrs"
@@ -45,6 +47,8 @@ export default class InputDatePicker extends Vue {
   @Prop(Boolean) readonly outlined!: boolean;
   @Prop(Boolean) readonly dense!: boolean;
   @Prop(Boolean) readonly clearable!: boolean;
+  @Prop(Boolean) readonly singleLine!: boolean;
+  @Prop(Boolean) readonly hideDetails!: boolean;
 
   @Prop(Boolean) readonly disabled!: boolean;
 

@@ -29,9 +29,13 @@ export const actions: ActionTree<UserState, RootState> = {
         .then(async (res) => {
           console.log("HEADER:", res.headers);
           commit("login", res.data);
-          dispatch("profiles/getProfiles", null, { root: true });
-          dispatch("positions/getPositions", null, { root: true });
-          dispatch("departments/getDepartments", null, { root: true });
+          await dispatch("profiles/getProfiles", null, { root: true });
+          await dispatch("courses/getCourses", null, { root: true });
+          await dispatch("courses/getAllCourseParticipants", null, {
+            root: true,
+          });
+          await dispatch("positions/getPositions", null, { root: true });
+          await dispatch("departments/getDepartments", null, { root: true });
           resolve(res?.data);
         })
         .catch((err) => {

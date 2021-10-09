@@ -8,6 +8,7 @@ export interface RootState {
   courses: CoursesState;
   positions: PositionsState;
   departments: DepartmentsState;
+  leave: LeaveState;
   history: HistoryState;
 }
 
@@ -33,6 +34,7 @@ export interface ProfilesState {
 export interface CoursesState {
   items: any;
   courseParticipants: any;
+  allCourseParticipants: any;
 }
 
 export interface PositionsState {
@@ -40,6 +42,18 @@ export interface PositionsState {
 }
 
 export interface DepartmentsState {
+  items: any;
+}
+
+export interface LeaveState {
+  types: any;
+  reasons: any;
+}
+
+export interface LeaveTypesState {
+  items: any;
+}
+export interface LeaveReasonsState {
   items: any;
 }
 

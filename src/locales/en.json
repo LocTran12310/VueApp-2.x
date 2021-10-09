@@ -8,6 +8,8 @@
   },
   "snackbar": {
     "close": "CLOSE",
+    "searchSuccess": "Search successfully",
+    "searchFail": "Error! Search failed!",
     "loginSuccess": "Logged in successfully",
     "loginFail": "Error! Login failed!",
     "logoutSuccess": "You have been successfully logout",
@@ -19,7 +21,11 @@
     "deleteSuccess": "Successfully deteled",
     "deleteFail": "Error! Delete failed",
     "changePasswordSuccess": "Password change successful",
-    "changePasswordFail": "Error! Failed to change password!"
+    "changePasswordFail": "Error! Failed to change password!",
+    "registerSuccess": "Successfully register",
+    "registerFail": "Error! Register failed!",
+    "emptyField": "Error! Invalid Start date or End date!",
+    "startGreaterThan": "Error! End date must be after Start date"
   },
   "nav": {
     "menu": {
@@ -37,9 +43,15 @@
     "courses": "Courses",
     "coursesList": "Courses List",
     "coursesRegister": "Register Course",
+    "attendance": "Time Attendance",
+    "attendanceWorkday": "Working detail",
+    "attendanceRegister": "Register",
     "master": "Master",
     "masterPositions": "Positions",
     "masterDepartments": "Departments",
+    "masterLeaveTypes": "Leave Types",
+    "masterLeaveReasons": "Leave Reasons",
+
     "logout": "Logout"
   },
   "changePassword": {
@@ -242,5 +254,30 @@
     "btnCancel": "CANCEL",
     "btnSave": "SAVE",
     "btnReset": "RESET"
+  },
+  "leave": {
+    "titleRegister": "Leave Register",
+    "titleDataTable": "Leave History",
+    "titleModalEdit": "EDIT LEAVE",
+    "id": "NO",
+    "employee": "Employee",
+    "startDate":"Start date",
+    "endDate":"End date",
+    "leaveType": "Leave Type",
+    "leaveReason": "Reason",
+    "note": "Note",
+    "actions": "Actions",
+    "btnRegister": "REGISTER",
+    "btnSave": "SAVE",
+    "btnCancel": "CANCEL"
+  },
+  "workday": {
+    "titleDataTable": "Workday",
+    "date": "Date",
+    "weekday": "Day",
+    "status": "Status",
+    "leaveType":"Leave Type",
+    "leaveReason": "Reason",
+    "note": "Note"
   }
 }

@@ -11,19 +11,19 @@ export const state: ProfilesState = {
 
 export const getters: GetterTree<ProfilesState, RootState> = {
   employeesID: (state) =>
-    state.items.result.map((item: any) => item.employee_id),
+    state.items?.result?.map((item: any) => item.employee_id),
   officialYear: (state) => {
-    const officialYear = state.items.result.map((item: any) => {
+    const officialYear = state.items?.result?.map((item: any) => {
       return item.official_date.split("-")[0];
     });
     const officialYearGroup: string[] = [];
     const officialYearGroupCount: string[] = [];
 
-    officialYear.map((year: string) => {
-      if (officialYearGroup.indexOf(year) === -1) {
-        officialYearGroup.push(year);
-        officialYearGroupCount.push(
-          officialYear.filter((v: string) => {
+    officialYear?.map((year: string) => {
+      if (officialYearGroup?.indexOf(year) === -1) {
+        officialYearGroup?.push(year);
+        officialYearGroupCount?.push(
+          officialYear?.filter((v: string) => {
             return v === year;
           })
         );
@@ -31,14 +31,22 @@ export const getters: GetterTree<ProfilesState, RootState> = {
     });
 
     //[...officialYearGroup.key()].sort()
-    const indices = Array.from(officialYearGroup.keys()).sort((a, b) =>
+    const indices = Array.from(officialYearGroup?.keys()).sort((a, b) =>
       officialYearGroup[a].localeCompare(officialYearGroup[b])
     );
 
-    const sortedYearGroup = indices.map((i) => officialYearGroup[i]);
-    const sortedYearGroupCount = indices.map((i) => officialYearGroupCount[i]);
+    const sortedYearGroup = indices?.map((i) => officialYearGroup[i]);
+    const sortedYearGroupCount = indices?.map((i) => officialYearGroupCount[i]);
 
-    return { sortedYearGroup, sortedYearGroupCount };
+    //get last 10 years from now
+    const YEAR_NEEDED = 10;
+    const getLastYear = (arr: any) => {
+      return arr.slice(arr.length - YEAR_NEEDED, arr.length);
+    };
+
+    const yearGroup = getLastYear(sortedYearGroup);
+    const yearGroupCount = getLastYear(sortedYearGroupCount);
+    return { yearGroup, yearGroupCount };
   },
 };
 
@@ -62,8 +70,8 @@ export const actions: ActionTree<ProfilesState, RootState> = {
     // If queryParams empty ==> return ALL PROFILES
     return new Promise((resolve, reject) => {
       API.get("/auth/profiles/")
-        .then((res) => {
-          commit("setProfiles", res.data);
+        .then(async (res) => {
+          await commit("setProfiles", res.data);
           resolve(JSON.parse(JSON.stringify(res.data)));
         })
         .catch((err) => {

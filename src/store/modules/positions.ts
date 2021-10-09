@@ -10,9 +10,9 @@ export const state: PositionsState = {
 };
 
 export const getters: GetterTree<PositionsState, RootState> = {
-  positionsName: (state) => state.items.map((item: any) => item.name),
+  positionsName: (state) => state.items?.map((item: any) => item.name),
   positionsShortName: (state) =>
-    state.items.map((item: any) => item.short_name),
+    state.items?.map((item: any) => item.short_name),
 };
 
 export const mutations: MutationTree<PositionsState> = {

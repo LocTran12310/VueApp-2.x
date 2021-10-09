@@ -8,6 +8,8 @@
   },
   "snackbar": {
     "close": "ĐÓNG",
+    "searchSuccess": "Tìm kiếm thành công",
+    "searchFail": "Lỗi! Tìm kiếm thất bại!",
     "loginSuccess": "Đăng nhập thành công",
     "loginFail": "Lỗi! Đăng nhập thất bại!",
     "logoutSuccess": "Đăng xuất thành công",
@@ -19,7 +21,11 @@
     "deleteSuccess": "Xóa thành công",
     "deleteFail": "Lỗi! Xóa thất bại!",
     "changePasswordSuccess": "Đổi mật khẩu thành công",
-    "changePasswordFail": "Lỗi! Đổi mật khẩu thất bại!"
+    "changePasswordFail": "Lỗi! Đổi mật khẩu thất bại!",
+    "registerSuccess": "Đăng ký thành công",
+    "registerFail": "Lỗi! Đăng ký thất bại!",
+    "emptyField": "Lỗi! Không được để trống Từ ngày hoặc Đến ngày!",
+    "startGreaterThan": "Lỗi! Đến ngày không được nhỏ hơn Từ ngày"
   },
   "nav": {
     "language": {
@@ -37,9 +43,14 @@
     "courses": "Khóa học",
     "coursesList": "Danh sách khóa học",
     "coursesRegister": "Đăng ký khóa học",
+    "attendance": "Chấm công",
+    "attendanceWorkday": "Bảng công số tháng",
+    "attendanceRegister": "Đăng ký",
     "master": "Master",
     "masterPositions": "Chức vụ",
     "masterDepartments": "Bộ phận",
+    "masterLeaveTypes": "Loại nghỉ",
+    "masterLeaveReasons": "Lý do nghỉ",
     "logout": "Đăng xuất"
   },
   "changePassword": {
@@ -242,5 +253,30 @@
     "btnCancel": "HỦY",
     "btnSave": "LƯU",
     "btnReset": "TẢI LẠI"
+  },
+  "leave": {
+    "titleRegister": "Đăng ký ngảy nghỉ",
+    "titleDataTable": "Lịch sử đăng ký ngày nghỉ",
+    "titleModalEdit": "SỬA NGÀY NGHỈ",
+    "id": "STT",
+    "employee": "Employee",
+    "startDate":"Từ ngày",
+    "endDate":"Đến ngày",
+    "leaveType": "Loại nghỉ",
+    "leaveReason": "Lý do",
+    "note": "Ghi chú",
+    "actions": "Actions",
+    "btnRegister": "ĐĂNG KÝ",
+    "btnSave": "LƯU",
+    "btnCancel": "HỦY"
+  },
+  "workday": {
+    "titleDataTable": "Bảng công",
+    "date": "Ngày",
+    "weekday": "Thứ",
+    "status": "Trạng thái",
+    "leaveType":"Loại nghỉ",
+    "leaveReason": "Lý do",
+    "note": "Ghi chú"
   }
 }
